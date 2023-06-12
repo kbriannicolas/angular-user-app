@@ -1,0 +1,55 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <form  (ngSubmit)="submitForm()" #form="ngForm">
+            <div class="mb-2">
+                <label class="form-label">
+                    Id
+                </label>
+                <input type="text" class="form-control " [(ngModel)]="newUser.id" name="id" #id="ngModel"
+                    placeholder="Generated automatically" [disabled]="true" value="''">
+            </div>
+            <div class="mb-2">
+                <label class="form-label">
+                    First Name
+                </label>
+                <input type="text" class="form-control" [(ngModel)]="newUser.firstname" name="firstname"
+                    #firstname="ngModel" placeholder="place enter your First Name" required>
+                <div class="alert alert-danger mt-2" [hidden]="firstname.valid || firstname.pristine">
+                    first name is required
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">
+                    Last Name
+                </label>
+                <input type="text" class="form-control" [(ngModel)]="newUser.lastname" name="lastname"
+                    #lastname="ngModel" placeholder="place enter your Last Name" required>
+                <div class="alert alert-danger mt-2" [hidden]="lastname.valid || lastname.pristine">
+                    Last name is required
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">
+                    Email
+                </label>
+                <input type="text" class="form-control" [(ngModel)]="newUser.email" name="email" #email="ngModel"
+                    placeholder="place enter your Email" required>
+                <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
+                    email is required
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">
+                    avatar
+                </label>
+                <input type="file" class="form-control" [(ngModel)]="newUser.avatar" name="avatar" #avatar="ngModel"
+                    placeholder="place enter your avatar" required>
+                <div class="alert alert-danger mt-2" [hidden]="avatar.valid || avatar.pristine">
+                    avatar is required
+                </div>
+            </div>
+            <button class="btn btn-primary" [disabled]="form.invalid">submit</button>
+        </form>
+    </div>
+</div>

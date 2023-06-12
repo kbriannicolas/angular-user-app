@@ -1,0 +1,17 @@
+<div class="row mx-auto col-md-6">
+    <div class="mx-auto" *ngIf="user">
+   
+        <div class="card  mt-4">
+            <img [src]="user.avatar" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2>{{user.firstname}} {{user.lastname}}</h2>
+                <p class="card-text">{{user.email}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button ngClass="btn btn-warning">update</button>
+                <button ngClass="btn btn-danger">delete</button>
+            </div>
+        </div>
+   
+</div>
+</div>
